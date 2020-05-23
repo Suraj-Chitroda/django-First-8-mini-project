@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>{{ article.title }}</h3>
+<p>{{ article.text }}</p>
+
+<h4><a href="{% url 'update_article' article.pk %}">Update this Article</a></h4>
+<h4><a href="{% url 'delete_article' article.pk %}">Delete this Article</a></h4>
+
+{% endblock %}

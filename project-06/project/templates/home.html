@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	{% for a in object_list %}
+	<dir class="article">
+		<h3><a href="{% url 'details' a.pk %}">{{ a.title }}</a></h3>
+		<p>{{ a.text }}</p>
+	</dir>
+	{% endfor %}
+
+{% endblock content %}
+

@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Articles</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main_style.css' %}">
+</head>
+
+<body>
+	<header>
+		<h1><a href="/">Blogs here</a></h1>
+	</header>
+	<dir class="container">
+
+		{% if user.is_authenticated %}
+
+		<p>Hii {{user.username}}, you are logged in </p>
+		<h3><a href="{% url 'logout' %}">Logout here</a></h3>
+
+		{% block content %}
+		{% endblock content %}
+
+		{% else %}
+		<h3><a href="{% url 'login' %}">Login here</a></h3>
+		{% endif %}
+
+		{% block content1 %}
+		{% endblock content1 %}
+
+	</dir>
+</body>
+
+</html>
